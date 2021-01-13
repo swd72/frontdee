@@ -1,29 +1,24 @@
 import React, { useState } from "react";
 import "./App.css";
 import LoadingBar from "react-top-loading-bar";
+import ProviderRoot from "./provider";
+import { Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+const browserHistory = createBrowserHistory({
+  basename: process.env.PUBLIC_URL,
+});
 function App() {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(50);
   return (
-    <div className="App">
+    <Router history={browserHistory} className="App">
       <LoadingBar
         color="#f11946"
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ProviderRoot />
+    </Router>
   );
 }
 
