@@ -1,35 +1,24 @@
 import React, { createContext, useState } from "react";
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 
 export const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
-  const [notiToken, setNotiToken] = useState(null);
-  const [refreshLoading, setRefreshLoading] = useState(0);
-  const [loading, setLoading] = useState(false);
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        token,
-        notiToken,
-        refreshLoading,
-        loading,
         setUser,
-        setToken,
-        setNotiToken,
-        setRefreshLoading,
-        setLoading,
-        login: async (email, password) => {
+        login: async (username, password) => {
           try {
+            console.log(username, password)
           } catch (e) {
             // setLoading(false);
             console.log(e);
           }
         },
-        register: async (email, password) => {
+        register: async (username, password) => {
           try {
           } catch (e) {
             console.log(e);

@@ -2,13 +2,13 @@ import React, { createContext, useState } from "react";
 
 export const StateContext = createContext({});
 export const StateProvider = ({ children }) => {
-  const [chatBadge, setChatBadge] = useState(null);
+  const [progress, setProgress] = useState(20);
 
   return (
     <StateContext.Provider
       value={{
-        chatBadge,
-        setChatBadge,
+        progress,
+        setProgress,
       }}
     >
       {children}

@@ -1,8 +1,16 @@
+import "react-app-polyfill/ie11";
+import "react-app-polyfill/stable";
+
+import "core-js/es/map";
+import "core-js/es/set";
+
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./fonts/Kanit-Light.ttf";
 import "./fonts/Kanit-Medium.ttf";
 import "./index.css";
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createMuiTheme } from "@material-ui/core/styles";

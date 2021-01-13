@@ -11,6 +11,7 @@ import {
 } from "react-icons/io";
 
 import HomePage from './views/Home'
+import SignInPage from './views/SignIn'
 export const route = [
   {
     title: "หน้าแรก",
@@ -79,7 +80,7 @@ export const route = [
     router: "/login",
     icon: <IoIosFingerPrint size="30" />,
     menuStatus: false,
-    component: HomePage,
+    component: SignInPage,
     role: null,
   },
   {
